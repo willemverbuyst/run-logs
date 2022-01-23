@@ -1,0 +1,18 @@
+services:
+  nginx:
+    ports:
+      - '3000:80'
+  app:
+    build:
+      context: .
+      args:
+        NODE_ENV: development
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    env_file:
+      - ./.env
+    command: npm run dev
+  mongo:
+    env_file:
+      - ./.env
