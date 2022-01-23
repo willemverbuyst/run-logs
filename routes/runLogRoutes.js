@@ -6,13 +6,13 @@ const router = express.Router()
 
 router
 	.route('/')
-	.get(protect, runLogController.getAllPosts)
-	.post(protect, runLogController.createPost)
+	.get(protect, runLogController.getAllRunLogs)
+	.post(protect, runLogController.createRunLog)
 
 router
 	.route('/:id')
-	.get(protect, runLogController.getOnePost)
-	.patch(protect, runLogController.updatePost)
-	.delete(protect, runLogController.deletePost)
+	.get(protect, runLogController.getOneRunLog)
+	.patch(protect, runLogController.updateRunLog)
+	.delete(protect, runLogController.deleteRunLog)
 
 module.exports = router
