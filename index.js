@@ -31,7 +31,7 @@ const mongoUrl = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_
 const connectWithRetry = () => {
 	mongoose
 		.connect(mongoUrl)
-		.then(() => console.log('succesfully connected to database'))
+		.then(() => console.log('successfully connected to database'))
 		.catch(e => {
 			console.log('error: ', e)
 			setTimeout(connectWithRetry, 5000)
@@ -54,8 +54,8 @@ app.use(
 		cookie: {
 			secure: false,
 			resave: false,
-			saveUnintialized: false,
-			hhtpOnly: true,
+			saveUninitialized: false,
+			httpOnly: true,
 			maxAge: 3000000,
 		},
 	})
