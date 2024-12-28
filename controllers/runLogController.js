@@ -1,6 +1,6 @@
 const RunLog = require('../models/runLogModel')
 
-exports.getAllRunLogs = async (req, res, next) => {
+exports.getAllRunLogs = async (_req, res, _next) => {
 	try {
 		const runLogs = await RunLog.find()
 		res.status(200).json({
@@ -15,7 +15,7 @@ exports.getAllRunLogs = async (req, res, next) => {
 	}
 }
 
-exports.getOneRunLog = async (req, res, next) => {
+exports.getOneRunLog = async (req, res, _next) => {
 	try {
 		const runLog = await RunLog.findById(req.params.id)
 		res.status(200).json({
@@ -29,7 +29,7 @@ exports.getOneRunLog = async (req, res, next) => {
 	}
 }
 
-exports.createRunLog = async (req, res, next) => {
+exports.createRunLog = async (req, res, _next) => {
 	try {
 		const runLog = await RunLog.create(req.body)
 		res.status(200).json({
@@ -44,7 +44,7 @@ exports.createRunLog = async (req, res, next) => {
 	}
 }
 
-exports.updateRunLog = async (req, res, next) => {
+exports.updateRunLog = async (req, res, _next) => {
 	try {
 		const runLog = await RunLog.findByIdAndUpdate(req.params.id, req.body, {
 			new: true,
@@ -61,7 +61,7 @@ exports.updateRunLog = async (req, res, next) => {
 	}
 }
 
-exports.deleteRunLog = async (req, res, next) => {
+exports.deleteRunLog = async (req, res, _next) => {
 	try {
 		await RunLog.findByIdAndDelete(req.params.id)
 		res.status(200).json({
