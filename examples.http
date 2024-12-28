@@ -1,0 +1,55 @@
+GET http://localhost:3000/api/v1/
+
+###
+
+POST http://localhost:3000/api/v1/users/signup
+Content-Type: application/json
+
+{
+  "userName": "John Doe",
+  "password": "password123"
+}
+
+###
+
+POST http://localhost:3000/api/v1/users/login
+Content-Type: application/json
+
+{
+  "userName": "John Doe",
+  "password": "password123"
+}
+
+###
+
+GET http://localhost:3000/api/v1/run-logs
+
+###
+
+GET http://localhost:3000/api/v1/run-logs/676f7e6e744029de59516902
+
+###
+
+POST http://localhost:3000/api/v1/run-logs/
+Content-Type: application/json
+
+{
+  "kind": "long",
+  "duration": 1000,
+  "distance": 1000
+}
+
+###
+
+PATCH http://localhost:3000/api/v1/run-logs/676f7e6e744029de59516902
+Content-Type: application/json
+
+{
+  "kind": "short",
+  "duration": 500
+}
+
+###
+
+DELETE http://localhost:3000/api/v1/run-logs/676f7e6e744029de59516902
+
